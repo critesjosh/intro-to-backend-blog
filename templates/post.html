@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>josh's blog</h1>
+    <div class="title">
+      {{post.title}}
+    </div>
+    <div class="date">
+      {{post.created.strftime("%b %d, %Y")}}
+    </div>
+    <hr />
+    <div class="body">
+      {{post.body}}
+    </div>
+
+
+{% endblock %}

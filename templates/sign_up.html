@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sign up</h1>
+<form method="post">
+  <span class="error">{{no_login_found}}</span>
+
+  <label>
+    <div>Username:</div>
+    <input type="text" name="name" value="{{name}}" />
+    <span class="error">{{error_username}}</span>
+    <span class="error">{{error_username_taken}}</span>
+  </label>
+
+  <br />
+  <label>
+    <div>Password:</div>
+    <input type="password" name="password" />
+    <span class="error">{{error_password}}</span>
+  </label>
+
+  <br />
+  <label>
+    <div>Verify password:</div>
+    <input type="password" name="verify" />
+  </label>
+
+  <br />
+  <label>
+    <div>Email (optional):</div>
+    <input type="text" name="email" value="{{email}}" />
+    <span class="error">{{error_email}}</span>
+  </label>
+
+  <br />
+  <input type="submit" />
+</form>
+
+
+{% endblock %}

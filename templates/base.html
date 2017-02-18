@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+    <title>blog posts</title>
+  </head>
+
+  <body>
+    <div id="content">
+
+      {% if user %}
+       <span class="top_bar_welcome">Welcome {{user.name}}! (<a href="/logout">logout</a>)</span>
+      {% endif %}
+      
+      {% if not user %}
+      <div class='register_links'>
+        <a class="signup_link" href="/signup">Sign up!</a> or <a href="/login">Login</a>
+      </div>
+      {% endif %}
+
+      {% block content%}
+      {% endblock %}
+    </div>
+
+    <hr />
+
+    <div class="footer">
+
+      <a href="/">List of posts</a>
+
+    </div>
+
+    </body>
+    </html>

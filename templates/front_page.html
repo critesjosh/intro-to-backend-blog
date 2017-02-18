@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>josh's blog</h1>
+
+      <br />
+      <a class="login_link" href="/add">Add a post</a>
+
+    <hr />
+    {% for post in posts %}
+      <div class="post">
+        <div class="title"><a href="/post/{{post.number}}">{{post.title}}</a></div>
+        <div class="date">{{post.created.strftime("%b %d, %Y")}}</div>
+        <hr/>
+        <div class="body">{{post.body}}</div>
+      </div>
+    {% endfor %}
+
+{% endblock %}

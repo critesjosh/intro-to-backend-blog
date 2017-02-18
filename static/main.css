@@ -1,0 +1,64 @@
+.title {
+  font-size: 26px;
+  font-family: monospace;
+}
+
+.date {
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.body {
+  font-size: 20px;
+  font-family: monospace;
+}
+
+
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+label {
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  width: 400px;
+  font-size: 20px;
+  font-family: monospace;
+
+}
+
+textarea {
+  width: 400px;
+  height: 300px;
+  font-family: monospace;
+}
+
+.error {
+  color: red;
+}
+
+.post + .post {
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.register_links{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.top_bar_welcome{
+  font-size: 16px;
+  position: absolute;
+  right: 10px
+}
