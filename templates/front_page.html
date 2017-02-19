@@ -4,11 +4,14 @@
     <h1>josh's blog</h1>
 
       <br />
+      {% if user %}
       <a class="login_link" href="/add">Add a post</a>
-
+      {% else %}
+      <span><a href="/signup">Sign up</a> or <a href="/login">Log in</a> to add a post</span>
+      {% endif %}
     <hr />
     {% for post in posts %}
-      <div class="post">
+      <div class="post" style="background: #eaeaea">
         <div class="title"><a href="/post/{{post.number}}">{{post.title}}</a></div>
         <div class="date">{{post.created.strftime("%b %d, %Y")}}</div>
         <hr/>

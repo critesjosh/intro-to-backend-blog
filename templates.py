@@ -95,6 +95,7 @@ class Post(db.Model):
     body = db.TextProperty(required = True)
     created = db.DateTimeProperty(auto_now_add = True)
     number = db.IntegerProperty()
+    author = db.StringProperty()
 
 
 class User(db.Model):
@@ -139,9 +140,10 @@ class AddPost(Handler):
     def post(self):
         title = self.request.get('title')
         body = self.request.get('body')
+        author = self.user.name
 
         if title and body:
-            p = Post(title=title, body=body)
+            p = Post(title=title, body=body, author=author)
             p_key = p.put()
             p.number = p_key.id()
             p.put()
@@ -149,7 +151,7 @@ class AddPost(Handler):
             self.redirect("/post/%s" % p_key.id())
         else:
             error = "please add a title and a body"
-            self.render("/add_post.html", title=title, body=body, error=error)
+            self.render("/add_post.html", title=title, body=body, error=error, author=author)
 
 
 class Permalink(Handler):

@@ -11,6 +11,12 @@
     <div class="body">
       {{post.body}}
     </div>
-
+    {% if post.author %}
+    <br />
+    <br />
+    <div class="author">
+      Posted by {{post.author}} on {{post.created.strftime("%b %d, %Y")}}
+    </div>
+    {% endif %}
 
 {% endblock %}
